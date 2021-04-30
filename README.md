@@ -25,4 +25,25 @@ The purpose of the project is to build an ETL pipeline that extracts data from S
 
 ## Tools used
 
-ETL was performed using spark, airflow was used to automate this process and Redshift was used to save the data.
+ETL was performed using Spark, which partitions the data and assigns it to individual worker nodes and if the data grows it can easily be added to the Spark cluster. Airflow was used to automate this process, as it allows the creation of dynamic data pipelines built from reusable tasks, which can be monitored and easy to use. To storage the data was used Amazon Redshift which provides an excellent scale-out option as your data and query complexity grows.
+
+The  airflow graph view it looked like this:
+
+![airflow](airflow.png)
+
+
+## Additional questions
+  - If the data was increased by 100x.
+    - The use of pyspark helps in processing large amounts of data, but change to incremental updates would be important.  This would require creating a clutser on redshift that holds more nodes too.
+
+  - If the pipelines were run on a daily basis by 7am.
+      - If the indicators had metrics generated more frequently than annually, this would require a change to the airflow dag schedule configuration in capstone_nanodegree.py file: 
+
+   		>>dag = DAG('capstone_nanodegree_dag',  
+          	>>default_args=default_args,  
+          	>>description='Load and transform data in Redshift with Airflow',  
+          	>>schedule_interval='0 7 * * *'  
+        )
+
+  - If the database needed to be accessed by 100+ people.
+    Data is being stored in Redshift, which can easily scale to handle 100+ people accessing the data. Can be used dashboard tools, like tableau, which permits that people access the information too.
