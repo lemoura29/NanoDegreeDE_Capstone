@@ -12,8 +12,8 @@ from airflow.contrib.hooks.aws_hook import AwsHook
 
 
 
-AWS_KEY = 'AKIAXOZRK35GTEBVBA5U'
-AWS_SECRET = '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'
+AWS_KEY = ''
+AWS_SECRET = ''
 
 
 s3_bucket = "capstone-lemoura-udacity/transform"
