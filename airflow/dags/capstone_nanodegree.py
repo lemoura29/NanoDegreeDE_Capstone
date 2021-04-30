@@ -28,7 +28,7 @@ default_args = {
     'catchup' : False
 }
 
-dag = DAG('udac_example_dag',
+dag = DAG('capstone_nanodegree_dag',
           default_args=default_args,
           description='Load and transform data in Redshift with Airflow',
           schedule_interval = '* * 1 * *',
