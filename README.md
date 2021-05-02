@@ -8,7 +8,7 @@ The purpose of the project is to build an ETL pipeline that extracts data from S
 ## Sources:
 
 - [Countries with Regional Codes](https://github.com/lukes/ISO-3166-Countries-with-Regional-Codes/blob/master/all/all.json)
-- [Indicators e WDI data] (https://datatopics.worldbank.org/world-development-indicators/#archives)
+- [Indicators e WDI data](https://datatopics.worldbank.org/world-development-indicators/#archives)
 
 ### Datasets
 
